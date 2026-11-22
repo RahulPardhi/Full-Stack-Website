@@ -37,4 +37,4 @@ app.use(express.static("public")) //ye backend ke public folder ki static files 
 app.use(cookieParser()) // jab browseer backend ko cookies send krta hai, cookie parser unhe read krne me help krta hai.
 
 
-export{ app } // hum apne express application ko dusri files me use karne ke liye export ker rahe hain
+export {app} // hum apne express application ko dusri files me use karne ke liye export ker rahe hain

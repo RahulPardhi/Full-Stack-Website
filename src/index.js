@@ -8,10 +8,19 @@ import dotenv from "dotenv"
 import connectDB from "./db/index.js";
 
 
+
 dotenv.config({path: "./env" });
 
 
 connectDB()
+.then(() => { // Jab Promise successfully resolve hota hai, tab .then() execute hota hai.
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`server is running at port: ${process.env.PORT}`);
+    })
+})
+.catch((err) => { // Jab Promise reject hota hai, tab .catch() execute hota hai.
+    console.log("Mongo.db Connection failed ", err);
+})
 
 
 
